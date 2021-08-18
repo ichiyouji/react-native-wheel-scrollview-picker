@@ -149,13 +149,7 @@ export default function ScrollPicker({
       const _selectedIndex = Math.round(y / h);
       let _y;
 
-      if (props.disabledIndexLessThan && selectedIndex <= props.disabledIndexLessThan) {
-        _y = props.disabledIndexLessThan * h;
-      } else if (props.disabledIndexMoreThan && selectedIndex >= props.disabledIndexMoreThan) {
-        _y = props.disabledIndexMoreThan * h;
-      } else {
-        _y = _selectedIndex * h;
-      }
+      _y = _selectedIndex * h;
 
       if (_y !== y) {
         // using scrollTo in ios, onMomentumScrollEnd will be invoked
